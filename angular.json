@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "KSUCUMC": {
@@ -28,9 +28,18 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/toastr/build/toastr.min.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./semantic/dist/semantic.min.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.min.js",
+              "./node_modules/toastr/build/toastr.min.js",
+              "./node_modules/popper.js/dist/umd/popper.min.js",
+              "./node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "./semantic/dist/semantic.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -123,6 +132,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "KSUCUMC"
+    }
+  },
+  "defaultProject": "KSUCUMC",
+  "cli": {
+    "analytics": "6016d235-01dc-4507-b1a4-8536bda747fc"
+  }
 }
