@@ -1,1 +1,194 @@
-<p>edit-profile works!</p>
+<div class="row">
+  <div class="col-md-6 mt-5">
+    <form class="ui equal width form raised segment">
+      <h1 class="ui large center aligned header">Personal Information</h1>
+      <div class="fields">
+        <div class="required field">
+            <label for="fname">First Name</label>
+            <div class="ui left icon input">
+              <input type="text" maxlength="20" placeholder="First Name" id="fname" required>
+              <i class="ui user icon"></i>
+            </div>
+
+        </div>
+      </div>
+      <div class="fields">
+        <div class="required field">
+          <label for="lname">Last Name</label>
+          <div class="ui left icon input">
+            <input type="text" maxlength="20" placeholder="Last Name" id="lname" required>
+            <i class="ui user icon"></i>
+          </div>
+        </div>
+      </div>
+      <div class="fields">
+        <div class="required field">
+          <label for="gender">Gender</label>
+          <select id="gender" class="ui selection dropdown">
+              <option selected class="text" value="">Choose gender</option>
+              <i class="dropdown icon"></i>
+              <div class="menu">
+                  <option class="item" value="Male">Male</option>
+                  <option class="item" value="Female">Female</option>
+              </div>
+          </select>
+        </div>
+      </div>
+      <div class="ui bottom attached buttons">
+        <button class="ui teal button">Save</button>
+      </div>
+    </form>
+  </div>
+  <div class="col-md-6 mt-5">
+    <form class="ui equal width form raised segment">
+      <h1 class="ui large center aligned header">Education</h1>
+      <div class="fields">
+        <div class="required field">
+            <label for="date">Year of Admission</label>
+            <div class="ui left icon input">
+              <input type="month" id="date" required>
+              <i class="ui calendar icon"></i>
+            </div>
+        </div>
+      </div>
+      <div class="fields">
+        <div class="required field">
+          <label for="reg">Registration Number</label>
+          <div class="ui left icon input">
+            <input type="text" maxlength="20" placeholder="Reg No" id="reg" required>
+            <i class="id card icon"></i>
+          </div>
+        </div>
+      </div>
+      <div class="fields">
+        <div class="required field">
+          <label for="course">Course</label>
+          <div class="ui left icon input">
+            <input type="text" maxlength="200" placeholder="Degree" id="course" required>
+            <i class="graduation cap icon"></i>
+          </div>
+        </div>
+      </div>
+      <div class="ui bottom attached buttons">
+        <button class="ui teal button">Save</button>
+      </div>
+    </form>
+  </div>
+  <div class="col-md-6 mt-5">
+    <form class="ui equal width form raised segment">
+      <h1 class="ui large center aligned header">Contact</h1>
+      <div class="fields">
+        <div class="required field">
+            <label for="phone">Phone</label>
+            <div class="ui left icon input">
+              <input type="tel" maxlength="13" id="phone" required>
+              <i class="ui phone icon"></i>
+            </div>
+        </div>
+      </div>
+      <div class="fields">
+        <div class="required field">
+          <label for="residence">Residence</label>
+          <div class="ui left icon input">
+            <input type="text" maxlength="20" placeholder="Residence" id="residence" required>
+            <i class="building icon"></i>
+          </div>
+        </div>
+      </div>
+      <div class="ui bottom attached buttons">
+        <button class="ui teal button">Save</button>
+      </div>
+    </form>
+  </div>
+  <div class="col-md-6 mt-5">
+    <form class="ui equal width form raised segment">
+      <h1 class="ui large center aligned header">Membership</h1>
+      <div class="fields">
+        <div class="required field">
+          <label for="ministries">Ministries</label>
+          <select id="ministries" multiple class="ui multiple search selection dropdown">
+              <option selected class="text" value="">Select Ministries</option>
+              <i class="dropdown icon"></i>
+              <div class="menu">
+                <option class="item" value="Praise and Worship">
+                    <div class="ui red label">Join</div>
+                    <span class="text">Praise and Worship</span>
+                </option>
+                <option class="item" value="Praise and Worship">
+                    <div class="ui red label">Join</div>
+                    <span class="text">Intrumentals</span>
+                </option>
+                <option class="item" value="Praise and Worship">
+                    <div class="ui red label">Join</div>
+                    <span class="text">Choir</span>
+                </option>
+                <option class="item" value="Praise and Worship">
+                    <div class="ui red label">Join</div>
+                    <span class="text">Intercessory</span>
+                </option>
+                <option class="item" value="Praise and Worship">
+                    <div class="ui red label">Join</div>
+                    <span class="text">Church School</span>
+                </option>
+                <option class="item" value="Praise and Worship">
+                    <div class="ui red label">Join</div>
+                    <span class="text">High School</span>
+                </option>
+                <option class="item" value="Praise and Worship">
+                    <div class="ui red label">Join</div>
+                    <span class="text">Ushering and Hospitality</span>
+                </option>
+                <option class="item" value="Praise and Worship">
+                    <div class="ui red label">Join</div>
+                    <span class="text">Creativity</span>
+                </option>
+                <option class="item" value="Praise and Worship">
+                    <div class="ui red label">Join</div>
+                    <span class="text">Counselling and Compassion</span>
+                </option>
+              </div>
+          </select>
+        </div>
+      </div>
+      <div class="fields">
+        <div class="required field">
+          <label for="ministries">Evangelistic teams (ETs)/ Student Outreach (SO)</label>
+          <select id="ministries" multiple class="ui search selection dropdown">
+              <option selected class="text" value="">Select Evangelistic Team</option>
+              <i class="dropdown icon"></i>
+              <div class="menu">
+                <option class="item" value="Praise and Worship">
+                    <div class="ui red label">Join</div>
+                    <span class="text">Central and Nairobi ET</span>
+                    <span class="description">CET</span>
+                </option>
+                <option class="item" value="Praise and Worship">
+                    <div class="ui red label">Join</div>
+                    <span class="text">Nyanza ET</span>
+                    <span class="description">NET</span>
+                </option>
+                <option class="item" value="Praise and Worship">
+                    <div class="ui red label">Join</div>
+                    <span class="text">Western SO</span>
+                    <span class="description">WESO</span>
+                </option>
+                <option class="item" value="Praise and Worship">
+                    <div class="ui red label">Join</div>
+                    <span class="text">Rift valley ET</span>
+                    <span class="description">RIVET</span>
+                </option>
+                <option class="item" value="Praise and Worship">
+                    <div class="ui red label">Join</div>
+                    <span class="text">Eastern Students ET</span>
+                    <span class="description">ESET</span>
+                </option>
+              </div>
+          </select>
+        </div>
+      </div>
+      <div class="ui bottom attached buttons">
+        <button class="ui teal button">Save</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+<div class="row">
+  <div class="col-12 mt-5 ui raised segment">
+    <div class="d-flex justify-content-between align-items-center">
+      <div>
+        <a routerLink="/faculties/{{ facultyId }}/questions" class="p-2 ui blue circular label">
+          <i class="centered left arrow icon"></i> Back
+        </a>
+      </div>
+      <a *ngIf="auth?.category === 'student'" routerLink="/faculties/{{ facultyId }}/{{ questionId }}/answers/create" class="p-2 ui green circular label">
+        <i class="centered plus icon"></i> Add Answer
+      </a>
+      <!-- <form class="ui action input">
+        <input type="text" name="q" placeholder="Member Name" required>
+        <button class="ui primary button">Search</button>
+      </form> -->
+    </div>
+  </div>
+  <div class="col-12 mt-5 ui raised segment">
+    <div class="ui horizontal divider">
+      <h1 class="ui centered header">Answers</h1>
+    </div>
+    <table class="ui inverted gray definition table">
+      <thead>
+          <tr><th></th>
+          <th *ngIf="question !== undefined">{{ question.statement }}</th>
+      </tr></thead>
+      <tbody *ngIf="answers.length > 0">
+          <tr *ngFor="let answer of answers;let i = index;">
+              <td>{{ (i + 1) }}.</td>
+              <td class="d-flex justify-content-between">
+                <span>
+                  {{ answer.statement}}
+                </span>
+                <div>
+                  <!-- <a routerLink="/questions/1/edit" class="ui blue circular label">
+                    <i class="centered eye icon"></i>edit
+                  </a> -->
+                  <a *ngIf="auth?.category === 'faculty'" (click)="destroyAnswer(answer.id)" class="ui red circular label">
+                    <i class="centered trash icon"></i>delete
+                  </a>
+                </div>
+              </td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

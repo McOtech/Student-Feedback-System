@@ -1,4 +1,6 @@
+import { Inject } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
+import { JQ_TOKEN } from '../services/jquery.service';
 
 @Component({
   selector: 'app-edit-profile',
@@ -7,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditProfileComponent implements OnInit {
 
-  constructor() { }
+  constructor(@Inject(JQ_TOKEN) private $: any) { }
 
   ngOnInit(): void {
+    this.$('.ui.dropdown').dropdown();
   }
 
 }

@@ -1,0 +1,67 @@
+<div class="row d-flex justify-content-center">
+  <div class="col-md-6 mt-3">
+    <div class="d-flex justify-content-between">
+      <a class="ui blue circular label" routerLink="/faculties">
+        <i class="left arrow icon"></i> Back
+      </a>
+      <a *ngIf="id !== undefined" routerLink="/faculties/{{ id }}/questions" class="p-2 ui green circular label">
+        <i class="centered eye icon"></i> Questions
+      </a>
+    </div>
+    <form (submit)="saveFaculty($event)" class="ui equal width form raised segment">
+      <h1 class="ui large center aligned header">Faculty</h1>
+      <div class="fields">
+        <div class="required field">
+            <label for="faculty">Faculty Name</label>
+            <div class="ui left icon input">
+              <input *ngIf="id !== undefined" value="{{ faculty.name }}" type="text" maxlength="70" placeholder="Faculty" id="faculty" name="name" required>
+              <input *ngIf="id === undefined" type="text" maxlength="70" placeholder="Faculty" id="faculty" name="name" required>
+              <i class="ui building icon"></i>
+            </div>
+        </div>
+      </div>
+      <div class="fields">
+        <div class="required field">
+          <label for="code">Code</label>
+          <div class="ui left icon input">
+            <input *ngIf="id !== undefined" value="{{ faculty.code }}" type="text" maxlength="20" placeholder="Code" id="code" name="code" required>
+            <input *ngIf="id === undefined" type="text" maxlength="20" placeholder="Code" id="code" name="code" required>
+            <i class="id card icon"></i>
+          </div>
+        </div>
+      </div>
+      <div class="fields">
+        <div class="required field">
+          <label for="description">Description</label>
+          <div class="ui left icon input">
+            <textarea *ngIf="id !== undefined" name="description" id="description" maxlength="200" cols="30" rows="3">{{ faculty.description }}</textarea>
+            <textarea *ngIf="id === undefined" name="description" id="description" maxlength="200" cols="30" rows="3"></textarea>
+            <!-- <i class="ui lock icon"></i> -->
+          </div>
+        </div>
+      </div>
+      <div class="fields">
+        <div class="required field">
+          <label for="password">Password</label>
+          <div class="ui left icon input">
+            <input *ngIf="id !== undefined" value="{{ faculty.password}}" type="password" placeholder="Password" id="password" name="password" required>
+            <input *ngIf="id === undefined" type="password" placeholder="Password" id="password" name="password" required>
+            <i class="ui lock icon"></i>
+          </div>
+        </div>
+      </div>
+      <div class="fields">
+        <div class="required field">
+          <label for="confirm-password">Confirm Password</label>
+          <div class="ui left icon input">
+            <input type="password" placeholder="Confirm Password" id="confirm-password" name="confirmPassword" required>
+            <i class="ui lock icon"></i>
+          </div>
+        </div>
+      </div>
+      <div class="ui bottom attached buttons">
+        <button class="ui teal button">Save</button>
+      </div>
+    </form>
+  </div>
+</div>

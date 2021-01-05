@@ -1,0 +1,24 @@
+<div class="row d-flex justify-content-center">
+  <div class="col-md-6 mt-3">
+    <div class="d-flex justify-content-between">
+      <a class="ui blue circular label" routerLink="/faculties/5/1/answers">
+        <i class="left arrow icon"></i> Back
+      </a>
+    </div>
+    <form (submit)="storeAnswers($event)" class="ui equal width form raised segment">
+      <h1 class="ui large center aligned header">Answer Statement</h1>
+      <div class="fields">
+        <div class="required field">
+          <label for="question">{{ question.statement }}</label>
+          <div class="ui left icon input">
+            <textarea name="answer" id="answer" placeholder="Respondence" maxlength="200" cols="30" rows="4"></textarea>
+            <!-- <i class="ui lock icon"></i> -->
+          </div>
+        </div>
+      </div>
+      <div class="ui bottom attached buttons">
+        <button class="ui teal button">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>

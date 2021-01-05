@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col-12 mt-5 ui raised segment">
+    <div class="d-flex justify-content-between align-items-center">
+      <div>
+        <a *ngIf="auth?.category === 'admin'" routerLink="/faculties/create" class="p-2 ui green circular label">
+          <i class="centered plus icon"></i> Add Faculty
+        </a>
+        <h1 *ngIf="auth?.category !== 'admin'" class="ui centered header">Welcome back...</h1>
+      </div>
+      <!-- <form class="ui action input">
+        <input type="text" name="q" placeholder="Member Name" required>
+        <button class="ui primary button">Search</button>
+      </form> -->
+    </div>
+  </div>
+  <div class="col-12 mt-5 ui raised segment">
+    <div class="ui horizontal divider">
+      <h1 class="ui centered header">Faculties</h1>
+    </div>
+    <div *ngIf="faculties.length > 0" class="row">
+      <div *ngFor="let faculty of faculties;" class="col-md-3">
+        <div class="ui red card">
+          <div class="content pb-0">
+              <a *ngIf="auth?.category === 'admin' || auth?.category === 'faculty'" routerLink="/faculties/{{ faculty.id }}" class="header">{{ faculty.name }}</a>
+              <a *ngIf="auth?.category !== 'admin' && auth?.category !== 'faculty'" routerLink="/faculties/{{ faculty.id }}/questions" class="header">{{ faculty.name }}</a>
+              <div class="meta">
+                <i *ngIf="auth?.category === 'admin'" (click)="destroyFaculty(faculty.id)" class="right floated red trash icon"></i>
+                <i class="right floated blue eye icon"></i>
+                <!-- <i class="right floated green question mark icon"></i> -->
+              </div>
+              <div class="description">
+                {{ faculty.description }}
+              </div>
+          </div>
+          <!-- <div class="extra content pr-3">
+              <span class="right floated">Date created: 4 months ago</span>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

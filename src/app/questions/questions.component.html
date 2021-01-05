@@ -1,0 +1,50 @@
+<div class="row">
+  <div class="col-12 mt-5 ui raised segment">
+    <div class="d-flex justify-content-between align-items-center">
+      <div>
+        <a routerLink="/faculties" class="p-2 ui blue circular label">
+          <i class="centered left arrow icon"></i> Back
+        </a>
+      </div>
+      <a *ngIf="auth?.category === 'faculty'" routerLink="/faculties/{{ facultyId }}/questions/create" class="p-2 ui green circular label">
+        <i class="centered plus icon"></i> Add Question
+      </a>
+      <!-- <form class="ui action input">
+        <input type="text" name="q" placeholder="Member Name" required>
+        <button class="ui primary button">Search</button>
+      </form> -->
+    </div>
+  </div>
+  <div class="col-12 mt-5 ui raised segment">
+    <div class="ui horizontal divider">
+      <h1 class="ui centered header">Questions</h1>
+    </div>
+    <table class="ui inverted gray definition table">
+      <thead>
+          <tr><th></th>
+          <th>All</th>
+      </tr></thead>
+      <tbody *ngIf="questions.length > 0">
+          <tr *ngFor="let question of questions; let i = index">
+              <td>{{ (i + 1) }}.</td>
+              <td class="d-flex justify-content-between">
+                <span>
+                  {{ question.statement }}
+                </span>
+                <div>
+                  <a *ngIf="auth?.category === 'faculty'" routerLink="/faculties/{{ facultyId }}/questions/{{ question.id }}/edit" class="ui blue circular label">
+                    <i class="centered eye icon"></i>edit
+                  </a>
+                  <a *ngIf="auth?.category === 'faculty'" (click)="destroyQuestion(question.id)" class="ui red circular label">
+                    <i class="centered trash icon"></i>delete
+                  </a>
+                  <a routerLink="/faculties/{{ facultyId }}/{{ question.id }}/answers" class="ui green circular label">
+                    <i class="centered write icon"></i>answers
+                  </a>
+                </div>
+              </td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

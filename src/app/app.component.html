@@ -10,20 +10,20 @@
         <a href="#">Home</a>
       </li>
       <ul class="right icon menu">
-        <li class="item">
+        <li *ngIf="auth?.status === false" class="item">
           <a routerLink="/signup">Signup</a>
         </li>
-        <li class="item">
+        <li *ngIf="auth?.status === false" class="item">
           <a routerLink="/signin">Login</a>
         </li>
         <li class="item">
-          <a href="#">
+          <a href="javascript:void(0)">
             <div class="user">
-              <img src="assets/images/logo.jpg" class="ui avatar image" alt=""> Paul Otieno
+              <img *ngIf="auth?.status === true" src="assets/images/logo.jpg" class="ui avatar image" alt=""> {{ ((auth?.status) ? 'Logged in as ' + auth.code + ' ' + '(' + auth?.category + ')' : '') | uppercase }}
             </div>
             <div class="ui flowing popup bottom left transition hidden">
               <div class="row">
-                <div class="col-12">
+                <!-- <div class="col-12">
                   <div class="d-flex align-items-center">
                     <i class="small black user icon"></i>
                     <a routerLink="/profile" class=" text-decoration-none text-dark" >My Profile</a>
@@ -36,16 +36,19 @@
                     <a routerLink="/settings" class=" text-decoration-none text-dark" >Edit Profile</a>
                   </div>
                   <div class="ui divider m-1"></div>
-                </div>
+                </div> -->
                 <div class="col-12">
-                  <div class="d-flex align-items-center">
+                  <div (click)="logoutUser()" class="d-flex align-items-center">
                     <i class="small red sign out icon"></i>
-                    <a href="#" class=" text-decoration-none text-dark" >Logout</a>
+                    <a href="javascript:void(0)" class=" text-decoration-none text-dark" >Logout</a>
                   </div>
                 </div>
               </div>
             </div>
           </a>
+        </li>
+        <li *ngIf="auth?.status === true" class="item">
+          <a (click)="logoutUser()" routerLink="">Logout</a>
         </li>
       </ul>
     </ul>
