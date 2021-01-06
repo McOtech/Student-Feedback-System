@@ -1,6 +1,6 @@
-# KSUCUMC
+# Student Feedback System
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.4.
+This is a web project developed to aid in collection of student feedback depending on the faculty in question in any given higher learning institution.
 
 ## Development server
 
